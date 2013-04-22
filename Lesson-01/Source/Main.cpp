@@ -15,7 +15,7 @@
 int WINAPI WinMain(HINSTANCE instance, HINSTANCE prevInstance, LPSTR cmdLine, int cmdShow) {
     MSG msg;
     
-	// Initialize all our modules.
+    // Initialize all our modules.
     InputModule input = InputModule();
     GraphicsModule graphics = GraphicsModule();
     SoundModule sound = SoundModule();
@@ -27,7 +27,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE prevInstance, LPSTR cmdLine, in
     // Check to make sure everything is working properly.
     game.Initialize(instance);
 
-	// Show the game window.
+    // Show the game window.
     game.Show(true);
 
     // Main loop goes here.
