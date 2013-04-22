@@ -55,7 +55,7 @@ void GameModule::Initialize(HINSTANCE &instance) {
 
     ZeroMemory(&this->wndClass, sizeof(WNDCLASSEX));
     
-	// Create our window description.
+    // Create our window description.
     this->wndClass.cbSize = sizeof(WNDCLASSEX);
     this->wndClass.style = CS_HREDRAW | CS_VREDRAW;
     this->wndClass.lpfnWndProc = WndProc;
