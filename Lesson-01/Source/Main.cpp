@@ -14,20 +14,24 @@
 
 int WINAPI WinMain(HINSTANCE instance, HINSTANCE prevInstance, LPSTR cmdLine, int cmdShow) {
     MSG msg;
-
+    
+	// Initialize all our modules.
     InputModule input = InputModule();
     GraphicsModule graphics = GraphicsModule();
     SoundModule sound = SoundModule();
     SceneModule scene = SceneModule();
 
+    // Initialize our game module.
     GameModule game = GameModule(input, graphics, sound, scene);
 
+    // Check to make sure everything is working properly.
     game.Initialize(instance);
 
+	// Show the game window.
     game.Show(true);
 
     // Main loop goes here.
-    if (game.MainLoop(&msg) != 0) {
+    if (!game.MainLoop(&msg)) {
         MessageBox(NULL, L"Game loop ended.\nProgram will now close.", L"QUIT", MB_OK | MB_ICONERROR);
 
         game.Show(false);
