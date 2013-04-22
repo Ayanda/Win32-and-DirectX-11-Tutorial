@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Input">
+      <UniqueIdentifier>{15cbf290-f681-49aa-aa56-f4b7c6de4797}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{e80c6177-51c3-4f84-883e-72cbf1191e28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{aeed0206-9d54-4ff6-ac71-f43f35bd9925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{db188290-405c-4516-bb7e-1679f756c60c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{f994066c-53cd-436f-9774-49e854e5cb28}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\InputModule.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GraphicsModule.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SoundModule.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneModule.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameModule.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\GameModule.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GraphicsModule.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\InputModule.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneModule.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SoundModule.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

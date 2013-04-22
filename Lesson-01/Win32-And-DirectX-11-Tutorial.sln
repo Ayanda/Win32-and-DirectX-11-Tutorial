@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Win32-And-DirectX-11-Tutorial", "Win32-And-DirectX-11-Tutorial.vcxproj", "{C5BA3FBF-E297-47D3-B681-110D6732D7EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5BA3FBF-E297-47D3-B681-110D6732D7EF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C5BA3FBF-E297-47D3-B681-110D6732D7EF}.Debug|Win32.Build.0 = Debug|Win32
+		{C5BA3FBF-E297-47D3-B681-110D6732D7EF}.Release|Win32.ActiveCfg = Release|Win32
+		{C5BA3FBF-E297-47D3-B681-110D6732D7EF}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
