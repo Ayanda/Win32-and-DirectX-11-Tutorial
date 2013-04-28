@@ -21,40 +21,40 @@ LRESULT CALLBACK WndProc(HWND wnd, UINT message, WPARAM wParam, LPARAM lParam) {
     return DefWindowProc(wnd, message, wParam, lParam);
 }
 
-GameModule::GameModule(InputModule input, GraphicsModule graphics, SoundModule sound, SceneModule scene) {
-    this->inputPtr = &input;
-    this->graphicsPtr = &graphics;
-    this->soundPtr = &sound;
-    this->scenePtr = &scene;
+GameModule::GameModule(InputModule *input, GraphicsModule *graphics, SoundModule *sound, SceneModule *scene) {
+    this->inputPtr = input;
+    this->graphicsPtr = graphics;
+    this->soundPtr = sound;
+    this->scenePtr = scene;
 }
 
 void GameModule::Initialize(HINSTANCE &instance) {
     if (!this->inputPtr->Initialize()) {
         MessageBox(NULL, L"Error initializing input module.\nProgram will now close.", L"Error", MB_OK | MB_ICONERROR);
 
-        ExitProcess(-1);
+        ExitProcess(1);
     }
 
     if (!this->graphicsPtr->Initialize()) {
         MessageBox(NULL, L"Error initializing graphics module.\nProgram will now close.", L"Error", MB_OK | MB_ICONERROR);
 
-        ExitProcess(-2);
+        ExitProcess(2);
     }
 
     if (!this->soundPtr->Initialize()) {
         MessageBox(NULL, L"Error initializing sound module.\nProgram will now close.", L"Error", MB_OK | MB_ICONERROR);
 
-        ExitProcess(-3);
+        ExitProcess(3);
     }
 
     if (!this->scenePtr->Initialize()) {
         MessageBox(NULL, L"Error initializing scene module.\nProgram will now close.", L"Error", MB_OK | MB_ICONERROR);
 
-        ExitProcess(-4);
+        ExitProcess(4);
     }
 
     ZeroMemory(&this->wndClass, sizeof(WNDCLASSEX));
-    
+
     // Create our window description.
     this->wndClass.cbSize = sizeof(WNDCLASSEX);
     this->wndClass.style = CS_HREDRAW | CS_VREDRAW;
@@ -107,7 +107,9 @@ void GameModule::Show(bool show) {
 }
 
 bool GameModule::MainLoop(MSG *msg) {
-    while (true) {
+    bool running = true;
+
+    while (running) {
         while (PeekMessage(msg, NULL, 0, 0, PM_REMOVE)) {
             TranslateMessage(msg);
             DispatchMessage(msg);

@@ -19,7 +19,7 @@
 
 class GameModule {
 public:
-    GameModule(InputModule input, GraphicsModule graphics, SoundModule sound, SceneModule scene);
+    GameModule(InputModule *input, GraphicsModule *graphics, SoundModule *sound, SceneModule *scene);
 
     void Initialize(HINSTANCE &instance);
     void Shutdown(void);
